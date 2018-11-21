@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+}
+.container {
+    background-color: black;
+    margin-top: 0px;
+}
+
+.banner {
+    height: 100px;
+    background-color: rgb(247,219,13);
+    vertical-align: middle;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+.logo {
+    display: inline-block;
+    font-family: 'Aref Ruqaa', serif;
+}
+.contents {
+    /* background-color: black; */
+}
+
+.buttons {
+    float: right;
+    display: inline-block;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 20px;
+    border-radius: 10%;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(247,219,13);
+}
+.red-flag, .intervention {
+    padding: 0px 150px 0px 150px;
+    margin: 60px 0px 60px 0px;
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    
+}
+
+.column h2 {
+    padding-top: 20px;
+}
+
+img {
+    width: 500px;
+    height: 300px;
+}
+h2 {
+    color: rgb(247,219,13);
+}
+
+p {
+    color: white;
+    line-height: 200%;
+}
+
+h2, p {
+    padding: 20px;
+}
+
+.footer p {
+    text-align: center;
+    border-top: 1px solid rgb(247,219,13);
+}
