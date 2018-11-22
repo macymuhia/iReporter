@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iReporter</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="banner">
+        <div class="navbar">
+            <div class="logo">
+                <h1><a href="./index.html">iReporter</a></h1>
+            </div>
+        </div>
+    </div>
+    <div class="create_account record_div">
+        <div class="form_title">
+            <h2>Incident Report Form</h2>
+        </div>
+        <form class="form_fields">
+            <div class="row">
+                <div class="column column_label">
+                    <label for="incident_type">Incident Type</label>
+                        <div class="pt-10">
+                            <select class="incident_select">
+                              <option value="0">Select Incident:</option>
+                              <option value="1">Corruption</option>
+                              <option value="2">Intervention</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="column">
+                    <label for="evidence_image">Evidence Image</label>
+                    <div>
+                        <input type="file" id="evidence_image" name="evidence_image" placeholder="Evidence Image..." />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="column column_label">
+                        <label for="incident_type">Incident Date</label>
+                        <div class="pt-10">
+                            <input type="date" id="incident_date" name="incident_date" />
+                        </div>
+                    </div>
+                    <div class="column">
+                        <label for="evidence_video">Evidence Video</label>
+                        <div>
+                            <input type="file" id="evidence_video" name="evidence_video" placeholder="Evidence Video..." />
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                        <div class="column column_label">
+                            <label>Incident Title</label>
+                            <div class="pt-10">
+                                <input type="text" placeholder="Incident title" id="incident_title" />
+                            </div>
+                            <label><br>Incident Description</label>
+                                <div class="pt-10">
+                                    <textarea rows="5" columns="10"></textarea>
+                                </div>
+                        </div>
+                        <div class="column column_label">
+                                <label>Incident Location</label>
+                                <div class="pt-10">
+                                    <input type="text" placeholder="Incident Location" id="incident_desc" />
+                                </div>
+                            </div>
+                </div>
+            <div class="row">
+                <div class="column"></div>
+                <div class="column"><button class="btn" type="submit">Submit</button></div>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <p>&copy; 2018</p>
+    </div>
+</div>	
+</body>
+</html>
