@@ -3,12 +3,23 @@
     padding: 0px;
     box-sizing: border-box;
 }
-body {
-    margin: 0px;
+
+html, body {
+    height: 100%;
 }
+
+body {
+    background-color: black;
+    position: relative;
+}
+
 .container {
     background-color: black;
-    margin-top: 0px;
+    /* height: 100%; */
+    position: relative;
+    min-height: 100vh;
+    display: block;
+    padding-bottom: 60px;
 }
 
 .banner {
@@ -25,9 +36,24 @@ body {
     display: inline-block;
     font-family: 'Aref Ruqaa', serif;
 }
-.contents {
+
+.logo h1 a {
+    color: black;
+}
+.create_account {
+    color: black;
+    background-color: white;
+    /* opacity: 0.5; */
+    border-radius: 5px;
+    width: 500px;
+    padding: 30px;
+    margin: 30px auto;
+    display: block;
+    float: none;
     /* background-color: black; */
 }
+
+
 
 .buttons {
     float: right;
@@ -38,8 +64,9 @@ button {
     padding: 15px 30px;
     font-size: 18px;
     margin: 20px;
-    border-radius: 10%;
+    border-radius: 5px;
     background-color: black;
+    border-color: black;
 }
 
 a {
@@ -47,18 +74,41 @@ a {
     color: rgb(247,219,13);
 }
 .red-flag, .intervention {
-    padding: 0px 150px 0px 150px;
-    margin: 60px 0px 60px 0px;
+    padding: 0px 100px 0px 100px;
+    margin: 30px 0px 30px 0px;
     display: flex;
+}
+
+.column input {
+    padding: 10px 0px 10px 5px;
+    border: none;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    
+}
+
+.column input:focus {
+    outline: none;
+}
+.column label {
+    margin: 10px 0px;
+}
+
+.row {
+    display: flex;
+    margin: 10px;
+
 }
 
 .column {
     flex: 50%;
-    
 }
 
 .column h2 {
     padding-top: 20px;
+}
+
+.column_label {
+    padding-top: 10px;
 }
 
 img {
@@ -78,7 +128,42 @@ h2, p {
     padding: 20px;
 }
 
+.form_title {
+    text-align: center;
+}
+
+.form_title h2 {
+    color: black;
+}
+
+.form_title h4 a {
+    color: #E89E0C;
+}
+
+.btn {
+    color: rgb(247,219,13);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.form_fields {
+    padding-top: 10px;
+}
+
 .footer p {
     text-align: center;
     border-top: 1px solid rgb(247,219,13);
+    color: rgb(247,219,13);
+    width: 100%;
+    padding: 15px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
 }
