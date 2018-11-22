@@ -136,7 +136,7 @@ h2, p {
     color: black;
 }
 
-.form_title h4 a {
+.form_title h4 a, .forgot {
     color: #E89E0C;
 }
 
