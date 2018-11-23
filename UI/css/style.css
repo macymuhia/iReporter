@@ -1,4 +1,7 @@
 * {
+    border: 1px solid red;
+}
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -173,6 +176,45 @@ h2, p {
     padding-top: 10px;
 }
 
+/* .dash_cols {
+    float: left;
+    margin: 30px 0px 30px 0px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.left {
+    width: 25%;
+}
+
+.right {
+    width: 75%;
+} */
+.boxes {
+    color: black;
+   }
+
+.box {
+     float: left;
+     width: 20%;
+     height: 100px;
+     margin: 1em 0.5em 1em 3em;
+     background-color:white;
+     border-radius: 5px;
+     color: black;
+   }
+
+.box i{
+       float: left;
+       line-height: 100px;
+       font-size: 50px;
+       padding-left: 20px;
+   }
+.box p{
+       color: black;
+       float: left;
+       font-weight: bold;
+   }
 .footer p {
     text-align: center;
     border-top: 1px solid rgb(247,219,13);
