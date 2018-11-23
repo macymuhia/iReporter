@@ -3,8 +3,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>iReporter</title>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/map.css" />
 </head>
 
 <body>
@@ -13,6 +16,16 @@
         <div class="navbar">
             <div class="logo">
                 <h1><a href="./index.html">iReporter</a></h1>
+            </div>
+            <div class="buttons signout_block">
+                <a href="javascript:;" class="signed_in_user">
+                    <i class="fa fa-shutdown"></i>
+                    Welcome Macy
+                </a>
+                <a href="./index.html" class="logout_button"
+                    title="Sign Out">
+                    <i class="fa fa-power-off"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -63,9 +76,12 @@
                         <div class="column column_label">
                                 <label>Incident Location</label>
                                 <div class="pt-10">
-                                    <input type="text" placeholder="Incident location" id="incident_location" />
+                                    <a href="javascript:;" id="myBtn">Select location on map</a>
                                 </div>
-                            </div>
+                                <div class="pt-10">
+                                    <input type="text" id="myLocationtext" placeholder="location..." />
+                                </div>
+                        </div>
                 </div>
                 <div class="row">
                     <label><br>Incident Description</label>
@@ -84,6 +100,59 @@
     <div class="footer">
         <p>&copy; 2018</p>
     </div>
-</div>	
+    <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 class="sel_pos">Select your location</h2>
+                <div id="map"></div>
+                <div id="current">Nothing yet...</div>
+            </div>
+    </div>
+</div>
+<script>
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+<script>
+        function initMap() {
+            var myLatLng = {
+                lat: 1.2921,
+                lng: 36.8219
+            };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: myLatLng
+            });
+            var myMarker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                draggable: true,
+                title: 'My Location'
+            });
+            google.maps.event.addListener(myMarker, 'dragend', function(evt) {
+                document.getElementById('current').innerHTML = '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(3) + ' Current Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
+                var setLocation = evt.latLng.lat().toFixed(3) + ',' + evt.latLng.lng().toFixed(3);
+                document.getElementById("myLocationtext").value = setLocation;
+            });
+            google.maps.event.addListener(myMarker, 'dragstart', function(evt) {
+                document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPkBdvZsReQirpdorM94nxCHln9-m5h88&callback=initMap">
+    </script>
 </body>
 </html>

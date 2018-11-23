@@ -15,7 +15,6 @@ body {
 
 .container {
     background-color: black;
-    /* height: 100%; */
     position: relative;
     min-height: 100vh;
     display: block;
@@ -128,6 +127,7 @@ img {
     width: 500px;
     height: 300px;
 }
+
 h2 {
     color: rgb(247,219,13);
 }
@@ -149,8 +149,12 @@ h2, p {
     color: black;
 }
 
-.form_title h4 a, .forgot {
+.form_title h4 a, .forgot, .pt-10 a {
     color: #E89E0C;
+}
+
+.sel_pos {
+    color: black;
 }
 
 .btn {
@@ -184,3 +188,14 @@ h2, p {
     display: block;
     margin-top: 20px;
 }
+
+.logout_button{
+    color: black;
+    padding: 15px 0px;
+    font-size: 25px;
+    margin:50px 20px;
+ }
+
+.signed_in_user{ color: black; }
+
+.signout_block{ margin-top: 20px; }
