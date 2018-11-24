@@ -152,6 +152,10 @@ h2, p {
     color: black;
 }
 
+.form_fields {
+    text-align: center;
+}
+
 .form_title h4 a, .forgot, .pt-10 a {
     color: #E89E0C;
 }
