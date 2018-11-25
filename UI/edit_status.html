@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>iReporter</title>
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/map.css" />
+</head>
+
+<body>
+<div class="container">
+    <div class="banner">
+        <div class="navbar">
+            <div class="logo">
+                <h1><a href="./index.html">iReporter</a></h1>
+            </div>
+            <div class="buttons signout_block">
+                <a href="javascript:;" class="signed_in_user">
+                    <i class="fa fa-shutdown"></i>
+                    Welcome Admin
+                </a>
+                <a href="./index.html" class="logout_button"
+                    title="Sign Out">
+                    <i class="fa fa-power-off"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="create_account record_div">
+        <div class="form_title">
+            <h2>Change Incident Status Form</h2>
+        </div>
+        <form class="form_field" action="./admin.html">
+            <select class="incident_select">
+                      <option value="0">Change Status:</option>
+                      <option value="1">Investigation</option>
+                      <option value="2">Rejected</option>
+                      <option value="2">Resolved</option>
+                    </select>
+            <div class="row">
+                <div class="column"><button class="btn" type="submit">Change</button></div>
+            </div>
+        </form>
+        </div>
+    <div class="footer">
+        <p>&copy; 2018</p>
+    </div>
+</div>
+
+
+</body>
+</html>
