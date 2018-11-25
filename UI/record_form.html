@@ -29,73 +29,83 @@
             </div>
         </div>
     </div>
-    <div class="create_account record_div">
-        <div class="form_title">
-            <h2>Incident Report Form</h2>
+    <div class="row table_content record_content">
+        <div class="left">
+            <h4>Menu</h4>
+            <ul class="menu">
+                <a href="./record_form.html"><li>Create New Incidents</li></a>
+                <a class="active" href="#"><li>My Incidents</li></a>
+                <a href="./user_all_records.html"><li>View All Incidents</li></a>
+            </ul>
         </div>
-        <form class="form_fields" action="./user_account.html">
-            <div class="row">
-                <div class="column column_label">
-                    <label for="incident_type">Incident Type</label>
-                        <div class="pt-10">
-                            <select class="incident_select">
-                              <option value="0">Select Incident:</option>
-                              <option value="1">Red-flag</option>
-                              <option value="2">Intervention</option>
-                            </select>
-                        </div>
-                </div>
-                <div class="column">
-                    <label for="evidence_image">Evidence Image</label>
-                    <div>
-                        <input type="file" id="evidence_image" name="evidence_image" placeholder="Evidence Image..." />
-                    </div>
-                </div>
+        <div class="create_record record_div right">
+            <div class="form_title">
+                <h2>Incident Report Form</h2>
             </div>
-            <div class="row">
+            <form class="form_fields" action="./user_account.html">
+                <div class="row">
                     <div class="column column_label">
-                        <label for="incident_type">Incident Date</label>
-                        <div class="pt-10">
-                            <input type="date" id="incident_date" name="incident_date" />
-                        </div>
+                        <label for="incident_type">Incident Type</label>
+                            <div class="pt-10">
+                                <select class="incident_select">
+                                <option value="0">Select Incident:</option>
+                                <option value="1">Red-flag</option>
+                                <option value="2">Intervention</option>
+                                </select>
+                            </div>
                     </div>
                     <div class="column">
-                        <label for="evidence_video">Evidence Video</label>
+                        <label for="evidence_image">Evidence Image</label>
                         <div>
-                            <input type="file" id="evidence_video" name="evidence_video" placeholder="Evidence Video..." />
+                            <input type="file" id="evidence_image" name="evidence_image" placeholder="Evidence Image..." />
                         </div>
                     </div>
                 </div>
-            <div class="row">
+                <div class="row">
                         <div class="column column_label">
-                            <label>Incident Title</label>
+                            <label for="incident_type">Incident Date</label>
                             <div class="pt-10">
-                                <input type="text" placeholder="Incident title" id="incident_title" />
+                                <input type="date" id="incident_date" name="incident_date" />
                             </div>
                         </div>
-                        <div class="column column_label">
-                                <label>Incident Location</label>
-                                <div class="pt-10">
-                                    <a href="javascript:;" id="myBtn">Select location on map</a>
-                                </div>
-                                <div class="pt-10">
-                                    <input type="text" id="myLocationtext" placeholder="location..." />
-                                </div>
+                        <div class="column">
+                            <label for="evidence_video">Evidence Video</label>
+                            <div>
+                                <input type="file" id="evidence_video" name="evidence_video" placeholder="Evidence Video..." />
+                            </div>
                         </div>
+                    </div>
+                <div class="row">
+                            <div class="column column_label">
+                                <label>Incident Title</label>
+                                <div class="pt-10">
+                                    <input type="text" placeholder="Incident title" id="incident_title" />
+                                </div>
+                            </div>
+                            <div class="column column_label">
+                                    <label>Incident Location</label>
+                                    <div class="pt-10">
+                                        <a href="javascript:;" id="myBtn">Select location on map</a>
+                                    </div>
+                                    <div class="pt-10">
+                                        <input type="text" id="myLocationtext" placeholder="location..." />
+                                    </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <label><br>Incident Description</label>
                 </div>
                 <div class="row">
-                    <label><br>Incident Description</label>
-             </div>
-            <div class="row">
-                <div class="pt-10">
-                            <textarea rows="5" columns="50"></textarea>
-                        </div>
-        </div>
-            <div class="row">
-                <div class="column"></div>
-                <div class="column"><button class="btn" type="submit">Submit</button></div>
+                    <div class="pt-10">
+                                <textarea rows="5" columns="50"></textarea>
+                            </div>
             </div>
-        </form>
+                <div class="row">
+                    <div class="column"></div>
+                    <div class="column"><button class="btn" type="submit">Submit</button></div>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="footer">
         <p>&copy; 2018</p>
