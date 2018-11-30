@@ -11,5 +11,6 @@ class BaseTestCase(unittest.TestCase):
 
         self.client = self.app.test_client()
 
-        self.red_flag = { "comment": "rejected", "location": "122,3344", "name": "macy" }
-        self.user = { "name": "macy" }
+        self.red_flag = {"comment": "rejected", "location": "122,3344", "name": "macy"}
+
+        self.user = {"name": "macy"}

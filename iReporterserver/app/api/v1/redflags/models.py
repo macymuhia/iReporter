@@ -2,8 +2,8 @@ from time import strftime
 
 db = []
 
-class Incident:
 
+class Incident:
     def __init__(self, name=None, location=None, comment=None):
         self.id = len(db) + 1
         self.status = "new"
@@ -29,10 +29,9 @@ class Incident:
 
     def find_flag(self, inc_id):
         for flag in db:
-            if flag['id'] == int(inc_id):
+            if flag["id"] == int(inc_id):
                 return flag
         return None
-
 
     def update_red_flag(self, inc_id):
         data = {}

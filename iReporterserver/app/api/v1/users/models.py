@@ -2,8 +2,8 @@ from time import strftime
 
 db = []
 
-class User:
 
+class User:
     def __init__(self, name=None):
         self.id = len(db) + 1
         self.createdOn = strftime("%A, %B %d %Y %H:%M:%S")
@@ -23,10 +23,9 @@ class User:
 
     def find_user(self, user_id):
         for flag in db:
-            if flag['id'] == int(user_id):
+            if flag["id"] == int(user_id):
                 return flag
         return None
-
 
     def update_user(self, user_id):
         data = {}
