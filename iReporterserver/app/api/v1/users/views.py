@@ -9,16 +9,16 @@ class UserList(Resource):
 
     def post(self):
         data = request.get_json()
-        name = data['name']
+        name = data["name"]
         instance = User(name)
         return instance.create_user(), 201
 
-class SingleUser(Resource):
 
+class SingleUser(Resource):
     def get(self, user_id):
         found_user = {}
         for user in db:
-            if user['id'] == int(user_id):
+            if user["id"] == int(user_id):
                 found_user = user
                 break
         return found_user, 200
@@ -27,15 +27,15 @@ class SingleUser(Resource):
         data = request.get_json()
 
         if not user_id:
-            return {'message':'Please provide user id'}, 400
+            return {"message": "Please provide user id"}, 400
 
-        name = data['name']
+        name = data["name"]
 
         instance = User(name)
         return instance.update_user(user_id), 201
 
     def delete(self, user_id):
         if not user_id:
-            return {'message':'Please provide user id'}, 400
+            return {"message": "Please provide user id"}, 400
 
         return User().delete_user(user_id)

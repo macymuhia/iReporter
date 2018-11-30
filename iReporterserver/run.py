@@ -1,5 +1,4 @@
 import os
-from flask import Blueprint
 from app import create_app
 from app.api.v1 import blueprint
 
