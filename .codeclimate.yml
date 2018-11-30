@@ -2,5 +2,9 @@ version: "1"
   plugins:
     enable: true
     checks:
-      Similar code:
-        enabled: false
+      identical-code:
+        config:
+          threshold: 25
+      similar-code:
+        config:
+          threshold: 100
