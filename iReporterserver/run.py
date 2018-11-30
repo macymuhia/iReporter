@@ -1,11 +1,11 @@
 import os
-from flask_restful import Api, Resource
+from flask import Blueprint
 from app import create_app
+from app.api.v1 import blueprint
 
 config_name = os.getenv("FLASK_ENV", "development")
 app = create_app(config_name)
-api = Api(app)
-
+app.register_blueprint(blueprint)
 
 if __name__ == "__main__":
     app.run()
