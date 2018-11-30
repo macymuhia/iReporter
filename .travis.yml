@@ -1,0 +1,13 @@
+language: python
+
+python:
+  - "3.5"
+
+install:
+  - pip install -r iReporterserver/requirements.txt
+
+script:
+  - py.test --cov=iReporterserver/app
+
+after_success:
+  - coveralls
