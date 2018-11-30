@@ -1,6 +1,6 @@
 version: "1"
-  plugins:
-    enable: true
-    checks:
-      Similar code:
-        enabled: false
+checks:
+  identical-code:
+    enabled: false
+  similar-code:
+    enabled: false
