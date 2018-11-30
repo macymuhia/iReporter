@@ -5,6 +5,4 @@ version: "1"
       identical-code:
         config:
           threshold: 25
-      similar-code:
-        config:
-          threshold: 100
+
