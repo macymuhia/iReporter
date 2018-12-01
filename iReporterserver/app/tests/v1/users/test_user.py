@@ -21,6 +21,7 @@ class UserTestCase(BaseTestCase):
         )
         self.assertEqual(response.status_code, 201)
         result_in_json = json.loads(response.data.decode("utf-8").replace("'", '"'))
+
         """ get the new red user by id """
         result = self.client.get("api/v1/users/{}".format(result_in_json["id"]))
         self.assertEqual(result.status_code, 200)
@@ -33,7 +34,7 @@ class UserTestCase(BaseTestCase):
         self.assertEqual(ps_res.status_code, 201)
 
         """ get the new user by id """
-        user_update = {"name": "Aviana"}
+        user_update = {"name": "Aviana", "location": "122,3344", "comment": "rejected"}
         pt_res = self.client.put(
             "api/v1/users/1",
             data=json.dumps(user_update),

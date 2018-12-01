@@ -1,4 +1,5 @@
 from time import strftime
+from app.api.v1.redflags.models import Incident
 
 db = []
 
@@ -21,19 +22,13 @@ class User:
     def get_all_users(self):
         return db
 
-    def find_user(self, user_id):
-        for flag in db:
-            if flag["id"] == int(user_id):
-                return flag
-        return None
-
     def update_user(self, user_id):
         data = {}
-        data["id"] = user_id
+        data["id"] = int(user_id)
         data["createdOn"] = self.createdOn
         data["name"] = self.name
 
-        user = self.find_user(user_id)
+        user = Incident().find_item(user_id)
         if not user:
             return "Id not found"
         user.update(data)
@@ -41,7 +36,7 @@ class User:
         return db
 
     def delete_user(self, user_id):
-        user = self.find_user(user_id)
+        user = Incident().find_item(user_id)
         if not user:
             return "Id not found"
         db.remove(user)

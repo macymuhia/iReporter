@@ -1,6 +1,7 @@
 from flask import request
 from flask_restful import Resource
-from app.api.v1.users.models import db, User
+from app.api.v1.users.models import User
+from app.api.v1.redflags.models import Incident
 
 
 class UserList(Resource):
@@ -16,12 +17,8 @@ class UserList(Resource):
 
 class SingleUser(Resource):
     def get(self, user_id):
-        found_user = {}
-        for user in db:
-            if user["id"] == int(user_id):
-                found_user = user
-                break
-        return found_user, 200
+
+        return Incident().find_item(user_id), 200
 
     def put(self, user_id):
         data = request.get_json()
