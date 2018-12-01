@@ -1,1 +1,1 @@
-web: python iReporterserver/run.py
+web: python run.py
