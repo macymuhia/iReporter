@@ -27,31 +27,31 @@ class Incident:
     def get_all_red_flags(self):
         return db
 
-    def find_flag(self, inc_id):
-        for flag in db:
-            if flag["id"] == int(inc_id):
-                return flag
+    def find_item(self, item_id):
+        for item in db:
+            if item["id"] == int(item_id):
+                return item
         return None
 
     def update_red_flag(self, inc_id):
         data = {}
-        data["id"] = inc_id
+        data["id"] = int(inc_id)
         data["status"] = self.status
         data["createdOn"] = self.createdOn
         data["comment"] = self.comment
         data["location"] = self.location
         data["name"] = self.name
 
-        flag = self.find_flag(inc_id)
+        flag = self.find_item(inc_id)
         if not flag:
-            return "Id not found"
+            return "Invalid incident Id"
         flag.update(data)
 
         return db
 
     def delete_incident(self, inc_id):
-        flag = self.find_flag(inc_id)
+        flag = self.find_item(inc_id)
         if not flag:
-            return "Id not found"
+            return "Invalid incident Id", 400
         db.remove(flag)
         return db

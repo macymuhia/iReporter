@@ -1,6 +1,6 @@
 from flask import request
 from flask_restful import Resource
-from .models import db, Incident
+from .models import Incident
 
 
 class RedFlagList(Resource):
@@ -18,11 +18,7 @@ class RedFlagList(Resource):
 
 class RedFlag(Resource):
     def get(self, red_flag_id):
-        found_flag = {}
-        for flag in db:
-            if flag["id"] == int(red_flag_id):
-                found_flag = flag
-                break
+        found_flag = Incident().find_item(red_flag_id)
         return found_flag, 200
 
     def put(self, red_flag_id):
