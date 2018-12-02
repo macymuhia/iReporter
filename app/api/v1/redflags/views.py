@@ -23,6 +23,7 @@ class RedFlag(Resource):
 
     def put(self, red_flag_id):
         data = request.get_json()
+        print (data)
 
         if not red_flag_id:
             return {"message": "Please provide incident id"}, 400
@@ -32,7 +33,7 @@ class RedFlag(Resource):
         comment = data["comment"]
 
         inc = Incident(name, location, comment)
-        return inc.update_red_flag(red_flag_id), 201
+        return inc.update_red_flag(red_flag_id)
 
     def delete(self, red_flag_id):
         if not red_flag_id:
