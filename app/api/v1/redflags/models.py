@@ -48,7 +48,7 @@ class Incident:
             return {"Invalid incident Id"}, 400
 
         if flag['status'] != "new":
-            return {"message": "Cannot be edited, incident is %s" % data["status"]}, 401
+            return {"message": "Cannot be edited, incident is %s" % data["status"]}, 400
 
         flag.update(data)
 
