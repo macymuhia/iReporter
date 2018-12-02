@@ -6,7 +6,7 @@ db = []
 class Incident:
     def __init__(self, name=None, location=None, comment=None):
         self.id = len(db) + 1
-        self.status = "under investigation"
+        self.status = "new"
         self.createdOn = strftime("%A, %B %d %Y %H:%M:%S")
         self.comment = comment
         self.location = location
@@ -48,7 +48,7 @@ class Incident:
             return {"Invalid incident Id"}, 400
 
         if flag['status'] != "new":
-            return {"message": "Cannot be edited, incident is %s" % data["status"]}, 400
+            return {"message": "Cannot be edited, incident is %s" % data["status"]}, 401
 
         flag.update(data)
 
