@@ -51,6 +51,12 @@ class RedFlagTestCase(BaseTestCase):
         )
         self.assertEqual(pt_res.status_code, 201)
 
+    def test_redflag_can_be_deleted(self):
+        post_res = self.client.post("api/v1/redflags", data=json.dumps(self.red_flag), content_type="application/json")
+        self.assertEqual(post_res.status_code, 201)
+        delete_res = self.client.delete("api/v1/redflags/1")
+        self.assertEqual(delete_res.status_code, 200)
+
 
 if __name__ == "__main__":
     unittest.main()

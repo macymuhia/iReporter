@@ -42,6 +42,12 @@ class UserTestCase(BaseTestCase):
         )
         self.assertEqual(pt_res.status_code, 201)
 
+    def test_user_can_be_deleted(self):
+        post_res = self.client.post("api/v1/users", data=json.dumps(self.user), content_type="application/json")
+        self.assertEqual(post_res.status_code, 201)
+        delete_res = self.client.delete("api/v1/users/1")
+        self.assertEqual(delete_res.status_code, 200)
+
 
 if __name__ == "__main__":
     unittest.main()

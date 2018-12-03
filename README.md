@@ -10,7 +10,7 @@
 
 * **[Flask](flask.pocoo.org/)**
 
-* **[Flask-RESTPlus](http://flask-restplus.readthedocs.io/en/stable/)**
+* **[Flask-RESTful](http://flask-restplus.readthedocs.io/en/stable/)**
 
 ## [Pivotal Tacker API Stories](https://www.pivotaltracker.com/n/projects/2226997)
 
