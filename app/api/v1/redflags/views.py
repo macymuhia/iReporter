@@ -32,7 +32,18 @@ class RedFlag(Resource):
         comment = data["comment"]
 
         inc = Incident(name, location, comment)
-        return inc.update_red_flag(red_flag_id), 201
+        res = inc.update_red_flag(red_flag_id)
+
+        if isinstance(res, list):
+            return {
+                 "status": "201",
+                 "data": res
+            },201
+        else:
+            return {
+                "status":"404",
+                "error": res
+            },404
 
     def delete(self, red_flag_id):
         if not red_flag_id:

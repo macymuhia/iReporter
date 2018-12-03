@@ -1,6 +1,7 @@
 import unittest
 from ..base_test import BaseTestCase
 import json
+import ast
 
 
 class RedFlagTestCase(BaseTestCase):
@@ -12,7 +13,7 @@ class RedFlagTestCase(BaseTestCase):
         res = self.client.post(
             "api/v1/redflags",
             data=json.dumps(self.red_flag),
-            content_type="application/json",
+            content_type="application/json"
         )
         self.assertEqual(res.status_code, 201)
 
@@ -21,7 +22,7 @@ class RedFlagTestCase(BaseTestCase):
         response = self.client.post(
             "api/v1/redflags",
             data=json.dumps(self.red_flag),
-            content_type="application/json",
+            content_type="application/json"
         )
         self.assertEqual(response.status_code, 201)
         result_in_json = json.loads(response.data.decode("utf-8").replace("'", '"'))
@@ -34,20 +35,24 @@ class RedFlagTestCase(BaseTestCase):
         ps_res = self.client.post(
             "api/v1/redflags",
             data=json.dumps(self.red_flag),
-            content_type="application/json",
+            content_type="application/json"
         )
         self.assertEqual(ps_res.status_code, 201)
+
+        str_data = ps_res.data.decode("utf-8")
+        r_dict = ast.literal_eval(str_data)
+        my_id = r_dict["id"]
 
         """ get the new red flag by id """
         red_flag_update = {
             "name": "Aviana",
             "location": "122,3344",
-            "comment": "rejected",
+            "comment": "rejected"
         }
         pt_res = self.client.put(
-            "api/v1/redflags/1",
+            "api/v1/redflags/{}".format(my_id),
             data=json.dumps(red_flag_update),
-            content_type="application/json",
+            content_type="application/json"
         )
         self.assertEqual(pt_res.status_code, 201)
 
