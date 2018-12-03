@@ -43,11 +43,16 @@ class Incident:
         data["name"] = self.name
 
         flag = self.find_item(inc_id)
+
         if not flag:
             return "Invalid incident Id"
+
+        if flag['status'] != "new":
+            return {"message": "Cannot be edited, incident is %s" % data["status"]}
+
         flag.update(data)
 
-        return db
+        return [data]
 
     def delete_incident(self, inc_id):
         flag = self.find_item(inc_id)
